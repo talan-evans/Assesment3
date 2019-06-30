@@ -1,0 +1,22 @@
+<div *ngIf="ticker !== null; else loading">
+  <div *ngIf="successful" class="alert alert-success" role="alert">
+    <h5>Success!</h5>
+    <h6>Stock successfully added to watchlist!</h6>
+  </div>
+  <div [ngClass]="{'positive': ticker.change >= 0, 'negative': ticker.change < 0}" class="container">
+    <app-titlebar [name]="ticker.companyName" [symbol]="ticker.symbol"></app-titlebar>
+    <app-price [price]="ticker.latestPrice" [change]="ticker.change" [changePercent]="ticker.changePercent"
+      [time]="ticker.latestTime"></app-price>
+    <app-details [ticker]="ticker"></app-details>
+    <app-actions *ngIf="showActions; else alreadywatching" [symbol]="ticker.symbol" (watchEvent)="handleWatch($event)"
+      (buyEvent)="handleBuy($event)">
+    </app-actions>
+  </div>
+</div>
+
+<ng-template #loading>Loading...</ng-template>
+<ng-template #alreadywatching>
+  <div class="bottom-text">
+    <i class="fas fa-check"></i> Watching this stock!
+  </div>
+</ng-template>

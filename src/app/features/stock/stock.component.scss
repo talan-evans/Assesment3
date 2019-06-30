@@ -1,0 +1,34 @@
+@import '../../../assets/theme';
+
+.container {
+    width: 50%;
+
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+
+    &:hover {
+        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    }
+
+    padding: 0;
+}
+
+.positive {
+    border-left: 5px solid $increase-color;
+}
+
+.negative {
+    border-left: 5px solid $decrease-color;
+}
+
+.bottom-text {
+    padding: 10px;
+    color: $secondary-text-color;
+    font-size: $base-font-size / 2;
+}
+
+.alert {
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}

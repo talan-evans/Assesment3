@@ -1,0 +1,12 @@
+<div [ngClass]="{'positive': ticker.change >= 0, 'negative': ticker.change < 0}" class="container">
+  <app-titlebar [name]="ticker.companyName" [symbol]="ticker.symbol"></app-titlebar>
+  <div style="display: flex; flex-direction: row; justify-content: space-between">
+    <app-price [price]="ticker.latestPrice" [change]="ticker.change" [changePercent]="ticker.changePercent"
+      [time]="ticker.latestTime"></app-price>
+
+
+    <button class="btn btn-outline-secondary" (click)="remove()"><i class="fas fa-minus-circle"></i> Remove from
+      watchlist</button>
+  </div>
+
+</div>

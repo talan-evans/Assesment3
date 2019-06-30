@@ -1,0 +1,29 @@
+@import '../../../assets/theme';
+
+a {
+    color: $primary-text-color;
+    text-decoration: none;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
+    vertical-align: text-bottom;
+
+    background-color: $primary-color;
+    color: $primary-text-color;
+
+    padding-bottom: 5px;
+
+    border-bottom: 1px solid #7f8c8d;
+}
+
+.name {
+    font-size: $base-font-size;
+}
+
+.symbol {
+    font-size: $base-font-size / 2;
+}

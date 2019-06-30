@@ -1,0 +1,11 @@
+<div class="container">
+  <div [ngClass]="{'positive': change >= 0, 'negative': change < 0}" class="price">
+    {{ price | currency }}
+  </div>
+  <div [ngClass]="{'positive': change >= 0, 'negative': change < 0}" class="change">
+    {{ change | currency }} ({{  changePercent }})
+  </div>
+  <div class="time-text">
+    As of {{ time }}
+  </div>
+</div>

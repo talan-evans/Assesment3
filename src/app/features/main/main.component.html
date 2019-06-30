@@ -1,0 +1,12 @@
+<div *ngIf="watchlist.length > 0; else emptylist">
+  <app-summary *ngFor="let item of watchlist" [symbol]="item" (removeEvent)="handleRemove($event)"></app-summary>
+  <div class="bottom-buffer">
+
+  </div>
+</div>
+
+<ng-template #emptylist>
+  <div class="empty">
+    Add symbols to your watchlist!
+  </div>
+</ng-template>
